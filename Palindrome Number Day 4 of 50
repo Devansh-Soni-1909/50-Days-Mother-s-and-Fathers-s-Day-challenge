@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+
+        if (x < 0 || (x % 10 == 0 && x != 0)) return false;
+       
+        long long  ans = 0;
+        long long t =x;
+        while(t){
+            long long rem = t%10;
+            ans = ans*10 + rem;
+           
+            t/=10;
+
+
+        }
+        if(ans == x) return true;
+        return false;
+        
+    }
+};
