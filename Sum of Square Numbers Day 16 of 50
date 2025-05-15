@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool judgeSquareSum(int c) {
+
+        long long  r = sqrt(c);
+        long long  i = 0;
+        while(i<=r){
+            long long s = i*i+r*r;
+            if(s == c) return true;
+            else if (s<c) i++;
+            else r--;
+        } 
+        return false;
+        
+    }
+};
