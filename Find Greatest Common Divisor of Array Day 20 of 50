@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int calculateGCD(int a , int b){
+        if(b == 0) return a;
+        else return calculateGCD(b,a%b);
+    }
+    int findGCD(vector<int>& nums) {
+
+        int maxi = *max_element(nums.begin(),nums.end());
+        int mini = *min_element(nums.begin(),nums.end());
+
+        cout<<maxi<<mini<<endl;
+
+        return calculateGCD(maxi,mini);
+
+        
+    }
+};
