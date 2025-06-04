@@ -1,0 +1,35 @@
+class Solution {
+public:
+    string reverseVowels(string s) {
+
+        int n = s.size();
+        vector<int> freq(10,0);
+        string vowel = "";
+        for(char ch : s){
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ){
+
+                vowel+=ch;
+
+            }
+        }
+
+        string ans = "";
+        int j = vowel.size()-1;
+        for(char ch : s){
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ){
+
+                if(!vowel.empty() && j>=0){
+                    ans+=vowel[j];
+                    j--;
+                }
+
+            }
+            else{
+                ans+=ch;
+            }
+
+        }
+        return ans;
+        
+    }
+};
