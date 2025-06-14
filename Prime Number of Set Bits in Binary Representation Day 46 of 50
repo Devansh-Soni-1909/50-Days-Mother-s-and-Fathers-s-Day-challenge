@@ -1,0 +1,30 @@
+class Solution {
+public:
+    bool helper(int & num){
+        int t = num;
+        int cnt = 0;
+        while(t){
+            if(t%2 != 0) cnt++;
+            t/=2;
+
+        }
+        bool flag = true;
+        if(cnt<=1) return false;
+        
+        for(int i = 2;i<cnt;i++){
+            if(cnt%i==0) flag = false;
+        }
+        if(flag) return true;
+        return false;
+    }
+   
+    int countPrimeSetBits(int left, int right) {
+
+        int ans = 0;
+        for(int i = left ; i <= right ;i++){
+            if(helper(i)) ans++;
+        }
+        return ans;
+        
+    }
+};
